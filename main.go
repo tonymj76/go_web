@@ -22,7 +22,7 @@ func logGiveName(h http.Handler) http.Handler{
 }
 
 func tony(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "yes i thing am getting this 's new go web app")
+	fmt.Fprintf(w, "yes i think am getting this new go web app")
 }
 
 func hello(w http.ResponseWriter, r *http.Request) {
