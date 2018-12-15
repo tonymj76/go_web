@@ -75,6 +75,18 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 	return
 }
 
+// using []byte because is a bit faster
+func handlPost2(w http.ResponseWriter, r *http.Request) (err error) {
+	var post Post
+	length := r.ContentLength
+	body := make([]byte, length)
+	_, err = r.Body.Read(body)
+	err = json.Unmarshal(body, &post)
+	DB.Create(&post)
+	w.WriteHeader(200)
+	return
+}
+
 func handlePut(w http.ResponseWriter, r *http.Request) (err error) {
 	var id int
 	id, err = strconv.Atoi(path.Base(r.URL.Path))
