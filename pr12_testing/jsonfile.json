@@ -1,0 +1,35 @@
+{
+   "id": 1,
+   "author":  {
+      "id":1,
+      "name":{
+         "first_name":"August",
+         "last_name":"April"
+      }
+   },
+   "msg":"this hub is very funny",
+   "comment": [
+      {
+         "id": 1,
+         "author": {
+            "id": 2,
+            "name": {
+               "first_name": "augest comment",
+               "last_name": "April comment"
+            }
+         },
+         "msg":"lol expectially whaht Godwill said"
+      },
+      {
+         "id": 3,
+         "author": {
+            "id": 2,
+            "name": {
+               "first_name": "jooy comment",
+               "last_name": "jane comment"
+            }
+         },
+         "msg": "joy jane has this comment"
+      }
+   ]
+}

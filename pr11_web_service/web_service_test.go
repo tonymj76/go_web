@@ -27,11 +27,11 @@ func TestWebServer(t *testing.T) {
 	}
 
 	var post Post
-	err := json.Unmarshal(w.Body.Bytes(), &post)
-	if err != nil {
+	if err := json.Unmarshal(write.Body.Bytes(), &post); err != nil{
 		t.Error(err)
 	}
-	if post.Author != "Tony" {
+	
+	if post.Author != "jerry" {
 		t.Error("Cannot retrieve Json post")
 	}
 }
