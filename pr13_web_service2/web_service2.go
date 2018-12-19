@@ -33,31 +33,31 @@ type Post struct {
 // CRUD functions
 
 // Createdb is use to add post to db
-func (post *Post) Createdb(p *Post) {
-	post.DB.Create(&p)
+func (post *Post) Createdb(p interface{}) {
+	post.DB.Create(p)
 }
 
 // Fetch is use to query a db with id
-func (post *Post) Fetch(id int, p *Post) {
-	post.DB.Where("id = ?", id).First(&p)
+func (post *Post) Fetch(id int, p interface{}) {
+	post.DB.Where("id = ?", id).First(p)
 }
 
 // Update is use to update db
-func (post *Post) Update(id int, p ...*Post) {
-	post.DB.Model(&p[0]).Update(&p[1])
+func (post *Post) Update(id int, p ...interface{}) {
+	post.DB.Model(&p[0]).Update(p[1])
 }
 
 // Delete is use to delete
-func (post *Post) Delete(id int, p *Post) {
-	post.DB.Where("id = ?", id).Delete(&p)
+func (post *Post) Delete(id int, p interface{}) {
+	post.DB.Where("id = ?", id).Delete(p)
 }
 
 // Test is interface
 type test interface {
-	Createdb(*Post)
-	Fetch(int, *Post)
-	Update(int, ...*Post)
-	Delete(int, *Post)
+	Createdb(interface{})
+	Fetch(int, interface{})
+	Update(int, ...interface{})
+	Delete(int, interface{})
 }
 
 // RequestHandler is used to update the mux
