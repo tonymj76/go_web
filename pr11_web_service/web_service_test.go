@@ -27,7 +27,7 @@ func TestWebServer(t *testing.T) {
 	}
 
 	var post Post
-	if err := json.Unmarshal(write.Body.Bytes(), &post); err != nil{
+	if err := json.Unmarshal(w.Body.Bytes(), &post); err != nil{
 		t.Error(err)
 	}
 	
