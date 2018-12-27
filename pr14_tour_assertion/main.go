@@ -52,5 +52,13 @@ func main() {
 
 	s ,_ := i.(int)
 	fmt.Printf("%T -- %v\n", s, s)
+
+	b := []byte{2, '3'}
+	fmt.Println(b)
+	fmt.Printf("%T %T\n", b, '2')
+
+	e:= []byte("thing")
+	fmt.Printf("%T %v", e, e)
+	fmt.Println('2')
 }
 
