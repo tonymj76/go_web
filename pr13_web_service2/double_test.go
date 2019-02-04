@@ -33,9 +33,9 @@ func (post FakePost)Update(id int, p ...interface{}) {
 
 func TestWebservice(t *testing.T) {
 	mux := http.NewServeMux()
-	mux.HandleFunc("/post/1", RequestHandler(FakePost{}))
+	mux.HandleFunc("/anythings/", RequestHandler(FakePost{}))
 	w := httptest.NewRecorder()
-	r, _ := http.NewRequest("GET", "/post/1", nil)
+	r, _ := http.NewRequest("GET", "/anythings/1", nil)
 	mux.ServeHTTP(w,r)
 	if w.Code != 200 {
 		t.Errorf("connection broken %v \n", w.Code)

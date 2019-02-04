@@ -40,11 +40,11 @@ type Name struct {
 
 func decoder(filename string) (post Post, err error) {
 	file, err := os.Open(filename)
-	defer file.Close()
 	if err != nil{
 		log.Println(err)
 		return
 	}
+	defer file.Close()
 	err = json.NewDecoder(file).Decode(&post)
 	return
 }
